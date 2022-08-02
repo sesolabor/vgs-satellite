@@ -22,7 +22,7 @@ def configure(db_path: str):
     global _engine
     global _Session
 
-    _engine = create_engine(f'sqlite:///{db_path}')
+    _engine = create_engine(f'sqlite:///{db_path}' + '?check_same_thread=False')
     _Session = sessionmaker(bind=_engine)
 
 
